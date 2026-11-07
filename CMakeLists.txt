@@ -3,7 +3,15 @@ project(LTDT_26_27_PathGo)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(workflows/app)
+include_directories(Source/app)
 
 add_executable(LTDT_26_27_PathGo
-        workflows/app/main.cpp)
+        Source/app/main.cpp
+        Source/include/Maze.h
+        Source/include/Graph.h
+        Source/include/Dijkstra.h
+        Source/include/Visualization.h
+        Source/src/Maze.cpp
+        Source/src/Graph.cpp
+        Source/src/Dijkstra.cpp
+        Source/src/Visualization.cpp)
