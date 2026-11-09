@@ -58,6 +58,8 @@ public:
     int rows() const { return static_cast<int>(grid_.size()); }
     int cols() const { return grid_.empty() ? 0 : static_cast<int>(grid_[0].size()); }
     char at(int r, int c) const { return grid_[r][c]; }
+    // Tra ve toan bo luoi (chi doc, khong cho sua truc tiep)
+    const std::vector<std::string>& getGrid() const { return grid_; }
     Position start() const { return start_; }
     Position end() const { return end_; }
 
