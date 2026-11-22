@@ -1,0 +1,9 @@
+| Question                                | Answer                                                                                            |
+|-----------------------------------------|---------------------------------------------------------------------------------------------------|
+| Why derived seeds?                      | One printed seed reproduces everything, but each stage uses a different random stream.            |
+| Why build on a local maze?              | So a failure leaves the caller's maze exactly as it was.                                          |
+| Why does the module do no printing?     | It returns false plus text, so the same code works for a console, D's window and E's tests.       |
+| Why print the seed?                     | Reproducibility: every run, however random, can be replayed.                                      |                                                                                             |
+| Why catch exceptions in the converters? | Bad input must produce a message, not a crash.                                                    |                                                                                             |
+| Why two searches?                       | The early stop is the normal mode, and run-to-the-end gives the comparison number for benchmarks. |                                                                                             |
+| Why does main do no algorithm work?     | It only wires A, B and your module together, which keeps each module testable alone.              |                                                                                             |
