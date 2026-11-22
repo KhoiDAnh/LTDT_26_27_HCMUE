@@ -58,3 +58,26 @@ B turns a maze into a graph. C runs Dijkstra on the graph. Neither side should n
 3. Update this file in the same pull request that changes `Graph.h`.
 
 Nobody edits `Graph.h` in a way that breaks this file without step 1.
+
+## 8. Settle with B
+1. Dijkstra uses numVertices() and neightbors(u). Please keep these two names.
+
+## SEVERITY WEIGHT B
+Fix options for cost * 1.414
+1. Scale all weights
+- orthogonal = 10 * cost
+- diagonal = round(14.14 * cost) (then divide 10 for display || drop diagonal mode)
+
+2. Graph stores `stardId` and `endId`
+- the contract said graph does not know start and exit
+- harmless convenience
+- dijkstra still takes them as parameters
+- if endVertex() is -1, chunk 1 already ignores and returns "not reachable"
+- update contract to say so
+
+## 9. Project Arguments
+- --file Source/data/maze_smoke.txt
+- --file Source/data/maze_smoke.txt --ends random --seed 42
+- --random 21 --seed 7
+- --random 21 --kind walls --walls 0.4 --weights 0.2 --seed 5
+- --random 1001 --seed 1
