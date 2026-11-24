@@ -20,3 +20,14 @@ target_include_directories(pathgo_core PUBLIC
 add_executable(LTDT_26_27_PathGo Source/app/main.cpp
         Source/include/Scenario.h)
 target_link_libraries(LTDT_26_27_PathGo PRIVATE pathgo_core)
+# Person D - the GUI window. Win32 only.
+if(WIN32)
+    add_executable(PathGo_GUI WIN32 Source/app_gui/main.cpp
+            Source/include/Visualization.h)
+    target_link_libraries(PathGo_GUI PRIVATE
+            pathgo_core
+            comdlg32
+            gdi32
+            user32)
+    target_compile_definitions(PathGo_GUI PRIVATE UNICODE _UNICODE)
+endif()
